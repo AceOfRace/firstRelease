@@ -45,7 +45,7 @@ module.exports.displayGameInfo = (req, res, next) => {
   module.exports.displayeditpage = (req, res, next) => {
     let id = req.params.id; //id of actual object
   
-    Book.findById(id, (err, booktoedit) => {
+    Game.findById(id, (err, gametoedit) => {
       if (err) {
         console.log(err);
         res.end(err);
@@ -79,7 +79,7 @@ module.exports.displayGameInfo = (req, res, next) => {
   };
   module.exports.deletepage = (req, res, next) => {
     let id = req.params.id;
-    Book.remove({ _id: id }, (err) => {
+    Game.remove({ _id: id }, (err) => {
       if (err) {
         console.log(err);
         res.end(err);
