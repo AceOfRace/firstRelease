@@ -1,5 +1,5 @@
 {
-  "name": "assignment-1",
+  "name": "COMP229",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -26,13 +26,13 @@
   "devDependencies": {
     "kill-port": "^2.0.1"
   },
-  "description": "assignment 1 for COMP229",
+  "description": "Group 9 Assignment COMP229",
   "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ziyan33/Assignment_1.git"
   },
-  "author": "Ziyan Liu",
+  "author": "Group 9",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Ziyan33/Assignment_1/issues"
