@@ -1,0 +1,55 @@
+
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/main_nav.ejs') %>
+
+<!-- Main Content -->
+<main class="container">
+
+  <div class="row">
+    <div class="col-md-offset-3 col-md-8">
+      <h1><%=title %></h1>
+      <a href="/game-info/add" class="btn btn-primary" role="button">
+      <i class ="fas fa-plus-circle"></i> Add a Game
+
+      </a>
+      <br />
+      <table class="table table-bordered table-striped table-hover">
+        <!--HEader row-->
+        <tr>
+          <th class="text-center">Tournament Name:</th>
+          <th class="text-center">Tournament Type:</th>
+          <th class="text-center">Is it Included?</th>
+          <th class="text-center">Number of Participants:</th>
+          <th class="text-center">Game:</th>
+          <th class="text-center"></th>
+          <th class="text-center"></th>
+        </tr>
+
+        <!--Repetable Templet row-->
+        <% for (let count=0; count<GameInfo.length; count++){%>
+          <tr>
+            <td class="text-centre "><%=GameInfo[count].name %></td>
+            <td class="text-centre "><%=GameInfo[count].tType %></td>
+            <td class="text-centre "><%=GameInfo[count].Included %></td>
+            <td class="text-centre "><%=GameInfo[count].participant %></td>
+            <td class="text-centre "><%=GameInfo[count].game %></td>
+            <td class="text-center col-1">
+              <a href="/game-info/edit/<%= GameInfo[count]._id %>" class="btn btn-primary btn-sm">
+              <i class="fas fa-pencil-alt"></i> Edit</a>
+          </td>
+          <td class="text-center col-1">
+              <a href="/game-info/delete/<%= GameInfo[count]._id %>" class="btn btn-danger btn-sm">
+              <i class="fas fa-trash-alt"></i> Delete</a>
+          </td>
+          </tr>
+        <%}%>
+      </table>
+    </div>
+  </div>
+</main>
+
+
+
+
+<%- include ('../partials/bottom_nav.ejs') %>
+<%- include ('../partials/footer.ejs') %>
